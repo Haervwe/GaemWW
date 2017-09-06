@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Fireball
   - Sword
+  - ColAmmo
+  - ColHealth
+  - ColShield
   layers:
   - Default
   - TransparentFX

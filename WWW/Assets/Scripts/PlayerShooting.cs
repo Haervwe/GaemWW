@@ -15,24 +15,32 @@ public class PlayerShooting : NetworkBehaviour
     public float cd = 5f;
     public string key;
     public float inventoryAmount = 5f;
-
     float cdInt = 0;
 
     // Update is called once per frame
     void Update()
     {
-        
-            if (Input.GetButtonUp(key) && cdInt <= 0 && inventoryAmount > 0)
-            {
-                cdInt = cd;
 
-                Vector3 offset = transform.rotation * new Vector3(offsetX, offsetY, 0);
-                Instantiate(projectile, transform.position + offset, transform.rotation);
-                inventoryAmount -= 1;
-            }
-        
+        if (Input.GetButtonUp(key) && cdInt <= 0 && inventoryAmount > 0)
+        {
+            cdInt = cd;
+
+            Vector3 offset = transform.rotation * new Vector3(offsetX, offsetY, 0);
+            Instantiate(projectile, transform.position + offset, transform.rotation);
+            inventoryAmount -= 1;
+        }
+
         cdInt -= Time.time;
         visualCd = cdInt;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "ColAmmo")
+        {
+            Destroy(other.gameObject);
+            inventoryAmount++;
+        }
     }
 }
 

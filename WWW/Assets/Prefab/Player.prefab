@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 114031943537719330}
   - component: {fileID: 95877572649791664}
   - component: {fileID: 114793625365758246}
-  - component: {fileID: 114257170726997622}
+  - component: {fileID: 114316547035707190}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -391,19 +391,6 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
---- !u!114 &114257170726997622
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1894516670133090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42ad069f9b700f24e9d297752e83989e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skill: Attack
-  key: Fire2
 --- !u!114 &114298492884634262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -415,9 +402,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb064f1b7930d642bbb757d1d063a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 1
   swordDamage: 1
   fireBallDamage: 1
+--- !u!114 &114316547035707190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1894516670133090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4097f3ef58404e4fb6a85106dbb99eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skill: Shield
+  key: e
+  shieldAmmo: 1
 --- !u!114 &114457725825184496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -491,7 +492,7 @@ MonoBehaviour:
   visualCd: 0
   cd: 1
   key: Fire1
-  inventoryAmount: 5
+  inventoryAmount: 1
 --- !u!114 &114963007154096998
 MonoBehaviour:
   m_ObjectHideFlags: 1
