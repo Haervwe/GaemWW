@@ -86,6 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4244362267635082}
   - component: {fileID: 212219561335879904}
+  - component: {fileID: 114866830619653722}
   - component: {fileID: 61113427509393986}
   - component: {fileID: 114642038085152444}
   - component: {fileID: 50237730706386120}
@@ -164,7 +165,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1894516670133090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.001, y: 0.003, z: 0}
+  m_LocalPosition: {x: -0.2567, y: 0.1473, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 4002999220169312}
@@ -212,7 +213,7 @@ Rigidbody2D:
   m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.00195318
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -270,7 +271,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.27035415, y: -0.17256635}
@@ -414,6 +415,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill: Attack
   key: Fire2
+--- !u!114 &114866830619653722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1894516670133090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba680a910260e00428509a7b87119abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1140234311698708, guid: 92d79ce08cb0cb94f8d6b80ceca57d35,
+    type: 2}
+  bulletSpawn: {fileID: 4125002745565398}
+  visualCd: 0
+  cd: 5
+  key: Fire1
+  inventoryAmount: 5
+  destructionTime: 2
+  bulletSpeed: 3
 --- !u!114 &114963007154096998
 MonoBehaviour:
   m_ObjectHideFlags: 1

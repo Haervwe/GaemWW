@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class AttackMelee : MonoBehaviour {
+public class AttackMelee : NetworkBehaviour
+{
 
     Animator an;
     public string skill = "Attack";
@@ -15,6 +17,11 @@ public class AttackMelee : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (!isLocalPlayer)
+        {
+            return;
+        
+        }
         if (Input.GetButtonUp(key))
         {
             an.SetTrigger("Attack");

@@ -49,7 +49,7 @@ public class PlayerMovement : NetworkBehaviour {
             float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
 
             //Ta Daaa
-            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle-100));
         }
 
         float AngleBetweenTwoPoints(Vector3 a, Vector3 b) {

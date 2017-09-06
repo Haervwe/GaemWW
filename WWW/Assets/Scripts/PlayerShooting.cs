@@ -8,26 +8,33 @@ using UnityEngine.Networking;
 public class PlayerShooting : NetworkBehaviour
 {
 
-    public GameObject projectile;
-    public float offsetX = 0f;
-    public float offsetY = 0f;
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
     public float visualCd;
     public float cd = 5f;
     public string key;
     public float inventoryAmount = 5f;
     float cdInt = 0;
+    public float destructionTime = 2f;
+    public float bulletSpeed = 3f;
+
+
+   
 
     // Update is called once per frame
     void Update()
     {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+
 
         if (Input.GetButtonUp(key) && cdInt <= 0 && inventoryAmount > 0)
         {
             cdInt = cd;
+            Fire();
 
-            Vector3 offset = transform.rotation * new Vector3(offsetX, offsetY, 0);
-            Instantiate(projectile, transform.position + offset, transform.rotation);
-            inventoryAmount -= 1;
         }
 
         cdInt -= Time.time;
@@ -41,6 +48,21 @@ public class PlayerShooting : NetworkBehaviour
             Destroy(other.gameObject);
             inventoryAmount++;
         }
+    }
+
+    void Fire()
+    {
+        // Create the Bullet from the Bullet Prefab
+        var bullet = (GameObject)Instantiate(
+            bulletPrefab,
+            bulletSpawn.position,
+            bulletSpawn.rotation);
+
+        // Add velocity to the bullet
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
+
+        // Destroy the bullet after 2 seconds
+        Destroy(bullet, destructionTime);
     }
 }
 
