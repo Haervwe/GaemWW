@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class DamageHandler : MonoBehaviour
+public class DamageHandler : NetworkBehaviour
 {
     public int health = 1;
     public int swordDamage = 1;
